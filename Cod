@@ -1,0 +1,25 @@
+using System;
+
+public class Calculator
+{
+    public int Add(int a, int b) => a + b;
+
+    public int Subtract(int a, int b) => a - b;
+
+    public int Multiply(int a, int b)
+    {
+        return checked(a * b); //checked для обработки переполнения
+    }
+
+    public double Divide(int a, int b)
+    {
+        if (b == 0)
+            throw new DivideByZeroException("Деление на ноль невозможно."); //добавлена проверка деления на 0
+        return (double)a / b;
+    }
+
+    public double Power(double a, double b)
+    {
+        return Math.Pow(a, b);
+    }
+}
